@@ -1,0 +1,184 @@
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
+  background-color: rgb(197, 196, 196);
+  color: rgb(39, 39, 39);
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.header {
+  position: sticky;
+  top: 0px;
+}
+
+.header,
+.footer {
+  z-index: 1;
+  align-self: stretch;
+  display: flex;
+  justify-content: end;
+  align-items: center;
+  gap: 1em;
+  background-color: rgb(39, 39, 39);
+  padding: 0 1em;
+
+  .menu-button {
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 1.7em;
+    height: 3em;
+    width: 3em;
+    margin-right: 1em;
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+
+    &:hover {
+      background-size: 1.9em;
+    }
+  }
+
+  .settings {
+    background-image: url(./assets/icons/menu_24dp_FILL0_wght400_GRAD0_opsz24.svg);
+  }
+
+  .twitter {
+    background-image: url(./assets/icons/twitter.svg);
+  }
+
+  .youtube {
+    background-image: url(./assets/icons/youtube.svg);
+  }
+
+  .instagram {
+    background-image: url(./assets/icons/instagram.svg);
+  }
+
+  .facebook {
+    background-image: url(./assets/icons/facebook.svg);
+  }
+}
+
+.menu-window {
+  position: absolute;
+  top: 2em;
+  right: 0;
+  display: grid;
+  padding: 2rem 1rem;
+  gap: 1.5rem;
+  background-color: rgb(39, 39, 39);
+
+  > * {
+    color: aliceblue;
+  }
+
+  > *:hover {
+    transform: translate(0px, -1px);
+    text-decoration: underline;
+  }
+}
+
+button {
+  border: none;
+  background-color: rgba(0, 0, 0, 0);
+}
+
+.content {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  align-items: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.attribution {
+  text-align: center;
+  padding: 1rem 0;
+}
+
+a {
+  color: hotpink;
+}
+
+.content {
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.slide-wrapper {
+  position: relative;
+  max-width: 1100px;
+}
+
+.switch-left,
+.switch-right {
+  cursor: pointer;
+  position: absolute;
+  top: 45%;
+  z-index: 10;
+  color: aliceblue;
+  font-weight: 800;
+  font-size: 2rem;
+  padding: 0.3em 0.7em;
+  &:hover {
+    color: hotpink;
+    background-color: rgba(39, 39, 39, 0.7);
+  }
+}
+
+.switch-left {
+  left: 0%;
+  border-radius: 0 5px 5px 0;
+}
+
+.switch-right {
+  right: 0%;
+  border-radius: 5px 0 0 5px;
+}
+
+img {
+  max-width: 100%;
+  grid-column: 1/4;
+  z-index: 0;
+  animation-name: fade;
+  animation-duration: 1.5s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.nav-wrapper {
+  margin-top: 1em;
+  gap: 1em;
+  display: flex;
+  & > * {
+    cursor: pointer;
+    width: 15px;
+    height: 15px;
+    background-color: aliceblue;
+    border-radius: 50%;
+
+    &:hover {
+      background-color: hotpink;
+    }
+  }
+}
+
+.active {
+  background-color: hotpink;
+  transition: background-color 0.6s ease;
+}
+
+.nav-button {
+  transition: background-color 0.6s ease;
+}

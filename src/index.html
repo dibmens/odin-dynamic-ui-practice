@@ -5,5 +5,84 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Project</title>
   </head>
-  <body></body>
+  <body>
+    <header class="header">
+      <div class="menu-window hidden">
+        <button class="button-1">Option 1</button>
+        <button class="button-2">Option 2</button>
+        <button class="button-3">Option 3</button>
+      </div>
+      <button class="menu-button settings"></button>
+    </header>
+    <div class="content">
+      <div class="slide-wrapper">
+        <img
+          src="<%=require('./assets/images/bluejay.png')%>"
+          alt="bluejay"
+          class="slide hidden"
+        />
+        <img
+          src="<%=require('./assets/images/dove.png')%>"
+          alt="dove"
+          class="slide hidden"
+        />
+        <img
+          src="<%=require('./assets/images/finch.png')%>"
+          alt="finch"
+          class="slide"
+        />
+        <img
+          src="<%=require('./assets/images/wren.png')%>"
+          alt="wren"
+          class="slide hidden"
+        />
+        <a class="switch-left">&#x3C;</a>
+        <a class="switch-right">&#x3E;</a>
+      </div>
+      <div class="nav-wrapper">
+        <div class="nav-button active"></div>
+        <div class="nav-button"></div>
+        <div class="nav-button"></div>
+        <div class="nav-button"></div>
+      </div>
+    </div>
+    <div class="attribution">
+      Images by
+      <a
+        href="https://pixabay.com/users/trek_jason-18696359/?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=9577198"
+        >Jason</a
+      >
+      from
+      <a
+        href="https://pixabay.com//?utm_source=link-attribution&utm_medium=referral&utm_campaign=image&utm_content=9577198"
+        >Pixabay</a
+      >
+    </div>
+    <footer class="footer">
+      <div class="logo">
+        <div class="logo-icon">
+          <div class="icon-a"></div>
+          <div class="icon-b"></div>
+        </div>
+      </div>
+      <div class="socials">
+        <button
+          onclick="window.location.href='https://www.twitter.com';"
+          class="menu-button twitter"
+        ></button>
+        <button
+          onclick="window.location.href='https://www.instagram.com';"
+          class="menu-button instagram"
+        ></button>
+        <button
+          onclick="window.location.href='https://www.youtube.com';"
+          class="menu-button youtube"
+        ></button>
+        <button
+          onclick="window.location.href='https://www.facebook.com';"
+          class="menu-button facebook"
+        ></button>
+      </div>
+    </footer>
+  </body>
 </html>

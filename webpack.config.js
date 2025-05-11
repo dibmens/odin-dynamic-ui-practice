@@ -1,12 +1,5 @@
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const path = require("path");
-const ESLintPlugin = require("eslint-webpack-plugin");
-
-module.exports = {
-  // ...
-  plugins: [new ESLintPlugin(options)],
-  // ...
-};
 
 module.exports = {
   entry: "./src/index.js",
@@ -17,14 +10,13 @@ module.exports = {
   plugins: [
     new HtmlWebpackPlugin({
       hash: true,
-      title: "Placeholder Title",
-      header: "Placeholder Header",
-      metaDesc: "Placeholder description",
+      title: "Dynamic Elements",
+      header: "Dynamic Elements",
+      metaDesc: "Dynamic Element Practice",
       template: "./src/index.html",
       filename: "index.html",
       inject: "body",
     }),
-    new ESLintPlugin({}),
   ],
   module: {
     rules: [
