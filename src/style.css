@@ -111,7 +111,7 @@ a {
 
 .slide-wrapper {
   position: relative;
-  max-width: 1100px;
+  max-width: 700px;
 }
 
 .switch-left,
@@ -145,7 +145,7 @@ img {
   grid-column: 1/4;
   z-index: 0;
   animation-name: fade;
-  animation-duration: 1.5s;
+  animation-duration: 1.8s;
 }
 
 @keyframes fade {
@@ -176,9 +176,60 @@ img {
 
 .active {
   background-color: hotpink;
-  transition: background-color 0.6s ease;
+  transition: background-color 0.6s ease; 
 }
 
 .nav-button {
   transition: background-color 0.6s ease;
+}
+
+
+.form {
+  border: solid 2px rgb(39, 39, 39);
+  border-radius: 10px;
+  align-self: center;
+  padding: 1em;
+  margin: 1em;
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(3,1fr);
+  grid-template-rows: 1fr 1fr 0.5fr;
+  justify-content: center;
+
+  #input-name,
+  #input-email {
+    grid-column: 1;
+  }
+
+  .name,
+  .email {
+    grid-column: 1;
+  }
+
+  .country,
+  .postal-code {
+    grid-column: 2;
+  }
+
+  .password,
+  .confirm-password {
+    grid-column: 3;
+  }
+
+  .country,
+  .password {
+    grid-row: 1;
+  }
+
+
+
+  #submit{
+    grid-column: 2;
+    background-color: hotpink;
+    justify-self: center;
+  }
+}
+
+.input-container {
+  display: grid;
 }

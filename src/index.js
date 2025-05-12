@@ -5,7 +5,7 @@ showDropdownMenu(`.menu-button`, `.menu-window`);
 useNavButtons();
 moveSlideLeft();
 moveSlideRight();
-setInterval(slideShow, 5000);
+// setInterval(slideShow, 8000);
 
 function showDropdownMenu(buttonId, menuId) {
   let button = document.querySelector(buttonId);
