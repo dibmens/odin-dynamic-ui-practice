@@ -5,7 +5,7 @@ showDropdownMenu(`.menu-button`, `.menu-window`);
 useNavButtons();
 moveSlideLeft();
 moveSlideRight();
-// setInterval(slideShow, 8000);
+setInterval(slideShow, 8000);
 
 function showDropdownMenu(buttonId, menuId) {
   let button = document.querySelector(buttonId);
@@ -72,3 +72,61 @@ function useNavButtons() {
 function slideShow() {
   document.querySelector(`.switch-right`).click();
 }
+
+function checkInputValidity() {
+  let formInputs = document.querySelectorAll(`.form>div>input`);
+  formInputs.forEach((input) => {
+    input.addEventListener(`input`, () => {
+      if (input.id == `input-password`) {
+        document.getElementById(`input-confirm-password`).pattern = input.value;
+      }
+      if (!input.validity.valid) {
+        showError(input);
+      }
+      if (input.validity.valid) {
+        input.nextElementSibling.classList.add(`no-error`);
+      }
+    });
+  });
+  document.getElementById(`submit`).addEventListener(`click`,(event)=> {
+    event.preventDefault();
+    if(document.querySelector(`.form`).checkValidity()){
+      alert(`HIGH FIVE!`)
+      document.querySelector(`.form`).reset();
+    } else {
+      alert(`Finish the form first, dingus`);
+    }
+  })
+}
+
+function showError(inputElement) {
+  let errorSpan = inputElement.nextElementSibling;
+  errorSpan.classList.remove(`no-error`);
+  if (inputElement.validity.valueMissing) {
+    errorSpan.textContent = `This field is required`;
+  }
+  if (inputElement.validity.tooShort) {
+    errorSpan.textContent = `Enter at least ${inputElement.minLength} characters`;
+  }
+  if (inputElement.validity.patternMismatch) {
+    errorSpan.textContent = `Enter a matching password`;
+  }
+  if (inputElement.id == `input-email` && inputElement.validity.typeMismatch) {
+    errorSpan.textContent = `Enter a valid email address`;
+  }
+}
+
+
+function submitForm(){
+  let form = document.querySelector(`form`);
+  form.addEventListener(`submit`, (event)=>{
+    event.preventDefault();
+    if(form.validity.valid){
+      alert(`huzzah`);
+    }
+  })
+}
+
+
+checkInputValidity();
+submitForm();

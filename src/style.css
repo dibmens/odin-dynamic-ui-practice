@@ -176,13 +176,12 @@ img {
 
 .active {
   background-color: hotpink;
-  transition: background-color 0.6s ease; 
+  transition: background-color 0.6s ease;
 }
 
 .nav-button {
   transition: background-color 0.6s ease;
 }
-
 
 .form {
   border: solid 2px rgb(39, 39, 39);
@@ -192,7 +191,7 @@ img {
   margin: 1em;
   display: grid;
   gap: 10px;
-  grid-template-columns: repeat(3,1fr);
+  grid-template-columns: repeat(3, 1fr);
   grid-template-rows: 1fr 1fr 0.5fr;
   justify-content: center;
 
@@ -221,15 +220,35 @@ img {
     grid-row: 1;
   }
 
-
-
-  #submit{
+  #submit {
     grid-column: 2;
     background-color: hotpink;
+    /* border: solid 1px black; */
+    border-radius: 3px;
     justify-self: center;
   }
 }
 
 .input-container {
   display: grid;
+}
+
+input:user-invalid {
+  background-color: rgb(209, 167, 167);
+  border: none;
+  border-radius: 2px;
+  border: 1px solid black;
+}
+
+.error {
+  background-color: brown;
+  color: aliceblue;
+  border-radius: 0 0 5px 5px;
+  text-align: center;
+  font-size: 80%;
+  padding: 2px;
+}
+
+.no-error {
+  visibility: hidden;
 }
